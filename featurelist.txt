@@ -1,0 +1,20 @@
+features left 
+DONE 1) invisible absolute div. with height same as viewport and width small -> absolutely positioned to right 0. and clicking.
+DONE 3)highlight based on tags -> using classes to toggle blur effects. when pressed. add blur effect to all while also adding an attribute to the specified class (if u pressed class "readings", add the no blur attribute to the readings class
+DONE 4) https://jsfiddle.net/gxvz03m9/ -> random image placer
+
+
+2)mousing over an entry-> makes a title pop up in the centre of the screen
+in mousing over with middle title. we had to hide the title in the span. this wont be an issue if we create a database. since we cal lthe database to get the title names
+
+
+
+
+TOM 
+1) create object structure ->
+2) save object structure and example objects in a JSON file
+3) read json file
+4) show title on middle of screen when hovering a statically placed object. and blur all others except highlighted(hovered)
+5) click image -> show modal -> probably use THIS keyword
+
+impt to return object properties.
