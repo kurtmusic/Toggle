@@ -1,0 +1,26 @@
+html{
+    background-color: aquamarine;
+}
+
+.content{
+    height: 200px;
+}
+
+.container{
+    display:flex;
+    justify-content: space-around;
+    padding-bottom: 3%;
+}
+
+button{
+    display:block;
+    margin-bottom: 0.5%;
+}
+
+.blurredGroup{
+    opacity: 0.3;
+}
+
+.focusedGrouped{
+    opacity: 1;
+}

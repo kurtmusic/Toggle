@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="images/Movie.JPG" class="content movie">
+        <img src="images/Music.JPG" class="content music">
+        <img src="images/Picture.JPG" class="content picture">
+    </div>
+
+    <div class="container">
+        <img src="images/Movie-2.JPG" class="content movie">
+        <img src="images/Music-2.JPG" class="content music">
+    </div>
+
+    <button id="movieButton">Movies</button>
+    <button id="musicButton">Music</button>
+    <button id="pictureButton">Picture</button>
+    <button id="focusedArrayStatus">Show full focused array</button>
+    <button id="blurredArrayStatus">Show full blurred array</button>
+    <div id="testerspace"></div>
+
+    <script>
+
+
+
+
+        var movieList = document.querySelectorAll(".movie");
+        var musicList = document.querySelectorAll(".music");
+        var pictureList = document.querySelectorAll(".picture");
+
+        var movieArray = Array.from(movieList);
+        var musicArray = Array.from(musicList);
+        var pictureArray = Array.from(pictureList);
+
+        var blurArray = ["movie", "music", "picture"];
+        var focusedArray = [];
+
+        document.querySelector("#movieButton").onclick = function () {
+            alert(focusedArray);
+
+            if (focusedArray.includes("movie")) {
+                for (var i = 0; i < focusedArray.length; i++) {
+                    if (focusedArray[i] === "movie") {
+                        focusedArray.splice(i, 1);
+                    }
+                }
+                blurArray.push("movie");
+            } else {
+                for (var i = 0; i < blurArray.length; i++) {
+                    if (blurArray[i] === "movie") {
+                        blurArray.splice(i, 1);
+                    }
+                }
+                focusedArray.push("movie");
+            }
+
+
+
+            alert(focusedArray);
+            showBlurred();
+            showFocus();
+            if(!focusedArray.length){
+                alert("nothing in focused array");
+            }
+
+        }
+
+        document.querySelector("#musicButton").onclick = function () {
+            alert(focusedArray);
+
+
+            if (focusedArray.includes("music")) {
+                for (var i = 0; i < focusedArray.length; i++) {
+                    if (focusedArray[i] === "music") {
+                        focusedArray.splice(i, 1);
+                    }
+                }
+                blurArray.push("music");
+            } else {
+                for (var i = 0; i < blurArray.length; i++) {
+                    if (blurArray[i] === "music") {
+                        blurArray.splice(i, 1);
+                    }
+                }
+                focusedArray.push("music");
+            }
+
+            alert(focusedArray);
+            showBlurred();
+            showFocus();
+            if(!focusedArray.length){
+                alert("nothing in focused array");
+            }
+        }
+
+        document.querySelector("#pictureButton").onclick = function () {
+            alert(focusedArray);
+
+
+            if (focusedArray.includes("picture")) {
+                for (var i = 0; i < focusedArray.length; i++) {
+                    if (focusedArray[i] === "picture") {
+                        focusedArray.splice(i, 1);
+                    }
+                }
+                blurArray.push("picture");
+            } else {
+                for (var i = 0; i < blurArray.length; i++) {
+                    if (blurArray[i] === "picture") {
+                        blurArray.splice(i, 1);
+                    }
+                }
+                focusedArray.push("picture");
+            }
+
+            alert(focusedArray);
+            showBlurred();
+            showFocus();
+            if(!focusedArray.length){
+                alert("nothing in focused array");
+            }
+
+        }
+
+        document.querySelector("#focusedArrayStatus").onclick = function () {
+            alert(focusedArray);
+        }
+
+        document.querySelector("#blurredArrayStatus").onclick = function () {
+            alert(blurArray);
+        }
+
+
+        function showFocus() {
+            if (focusedArray.includes("movie")) {
+                for (var i = 0; i < movieList.length; i++) {
+                    movieList[i].classList.add("focusedGroup");
+                }
+            } else {
+                for (var i = 0; i < movieList.length; i++) {
+                    movieList[i].classList.remove("focusedGroup");
+                }
+            }
+
+
+            if (focusedArray.includes("music")) {
+                for (var i = 0; i < musicList.length; i++) {
+                    musicList[i].classList.add("focusedGroup");
+                }
+            } else {
+                for (var i = 0; i < musicList.length; i++) {
+                    musicList[i].classList.remove("focusedGroup");
+                }
+            }
+
+            if (focusedArray.includes("picture")) {
+                for (var i = 0; i < pictureList.length; i++) {
+                    pictureList[i].classList.add("focusedGroup");
+                }
+            } else {
+                for (var i = 0; i < pictureList.length; i++) {
+                    pictureList[i].classList.remove("focusedGroup");
+                }
+            }
+
+            if(!focusedArray.length){
+
+                for (var i = 0; i < movieList.length; i++) {
+                    movieList[i].classList.remove("blurredGroup");
+                }
+            
+                for (var i = 0; i < musicList.length; i++) {
+                    musicList[i].classList.remove("blurredGroup");
+                }
+            
+                for (var i = 0; i < pictureList.length; i++) {
+                    pictureList[i].classList.remove("blurredGroup");
+                }
+            
+            }
+
+        }
+
+        function showBlurred() {
+            if (blurArray.includes("movie")) {
+                for (var i = 0; i < movieList.length; i++) {
+                    movieList[i].classList.add("blurredGroup");
+                }
+            } else {
+                for (var i = 0; i < movieList.length; i++) {
+                    movieList[i].classList.remove("blurredGroup");
+                }
+            }
+
+
+            if (blurArray.includes("music")) {
+                for (var i = 0; i < musicList.length; i++) {
+                    musicList[i].classList.add("blurredGroup");
+                }
+            } else {
+                for (var i = 0; i < musicList.length; i++) {
+                    musicList[i].classList.remove("blurredGroup");
+                }
+            }
+
+            if (blurArray.includes("picture")) {
+                for (var i = 0; i < pictureList.length; i++) {
+                    pictureList[i].classList.add("blurredGroup");
+                }
+            } else {
+                for (var i = 0; i < pictureList.length; i++) {
+                    pictureList[i].classList.remove("blurredGroup");
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
+
+
+<!--
+
+
+            for (var i = 0; i < focusedArray.length; i++) {
+                focusedArray[i].classList.add("colorChange");
+            }
+
+
+            document.querySelector("#movieButton").onclick = function(){
+            if(movieList)
+        }
+
+
+    https://stackoverflow.com/questions/1227286/get-class-list-for-element-with-jquery
+
+
+                    document.querySelector("#testerspace").innerHTML = music.classList.contains("music") + "<br>"; //find if class exist in element
+                document.querySelector("#testerspace").innerHTML = document.querySelector("#testerspace").innerHTML + music.classList.contains("books");
+
+
+
+            var allHeader = document.querySelectorAll(".header");
+            
+            document.querySelector("#tester").onclick = function(){
+                var i;
+
+                for(i=0;i<allHeader.length; i++){
+                    allHeader[i].classList.add("colorChange");
+                    allHeader[i].innerHTML = "Overwritten Protocol";
+                }
+
+                document.querySelector("#testerspace").classList.toggle("toggleColor");
+
+            }
+
+            document.querySelector("#untoggle").onclick = function(){
+                document.querySelector("#testerspace").classList.toggle("toggleColor");
+            }
+
+                  blurArray.push(movieArray[0]);
+        alert(blurArray);
+        alert(movieArray.length + " and " + blurArray.length);
+
+        _____________________
+
+        
+        blurArray.push(movieArray);
+        blurArray.push(pictureArray);
+        blurArray.push(musicArray);
+        alert(blurArray);
+
+        if(blurArray.includes(movieArray)){
+            alert("in here");
+        }
+        if(blurArray.includes(pictureArray)){
+            alert("pictures in here");
+        }
+        if(blurArray.includes(musicArray)){
+            alert("music in here");
+        }else{
+            alert("no music, wtf!");
+        }
+        console.log(blurArray[0][1]);
+
+        check if its inside array
+        _______________
+
+
+-->
