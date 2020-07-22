@@ -4,17 +4,17 @@ DONE 3)highlight based on tags -> using classes to toggle blur effects. when pre
 DONE 4) https://jsfiddle.net/gxvz03m9/ -> random image placer
 
 
-2)mousing over an entry-> makes a title pop up in the centre of the screen
+ 2)mousing over an entry-> makes a title pop up in the centre of the screen
 in mousing over with middle title. we had to hide the title in the span. this wont be an issue if we create a database. since we cal lthe database to get the title names
 
 
 
 
-TOM 
+TOM  https://jsfiddle.net/7Ls8ck02/1/
 1) create object structure ->
 2) save object structure and example objects in a JSON file
 3) read json file
 4) show title on middle of screen when hovering a statically placed object. and blur all others except highlighted(hovered)
 5) click image -> show modal -> probably use THIS keyword
 
-impt to return object properties.
+DONE impt to return object properties.
